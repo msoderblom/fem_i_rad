@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fem-i-rad</title>
+  <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+<body>
+  <h1>Fem i rad</h1>
+  <section id="welcome_screen">
+    
+
+    <h2>Regler:</h2>
+    <p>
+      Två spelare turas om att sätta ut <span class="symbol x_symbol">✖</span> eller <span class="symbol">○</span> i ett rutnät.
+      Den förste om att få fem tecken, vågrätt, lodrätt eller diagonalt, 
+      i rad har vunnit.
+
+    </p>
+    
+    <div>
+      <fieldset>
+        <label>Välj vem som ska börja:</label>
+        <label class="container x_symbol">
+          <input type="radio" name="player" value="x">
+          <span class="checkmark"></span>
+          ✖
+        </label>
+        <label class="container symbol">
+          <input type="radio" name="player" value="o">
+          <span class="checkmark"></span>
+          ○
+        </label>
+      </fieldset>
+      <fieldset>
+          <label>Välj storlek på spelplanen:</label>
+          <select name="board_size">
+              <option value="10">10x10</option>
+              <option value="25" selected>25x25</option>
+              <option value="50">50x50</option>
+          </select>
+      </fieldset>
+      <button id="start_game" class="btn_style">Starta spelet</button>
+    </div>
+
+  </section>
+
+  <section id="game_section" class="hide">
+      <div id="game_board"></div>
+      <div id="game_stats">
+        <p id="move_turn">Spelare: <span></span></p>
+        <p id="move_counter">Totalt antal drag: <span></span></p>
+      </div>
+  </section>
+
+  <section id="end_section" class="hide">
+    <div>
+        <p><span id="winner"></span> vann!</p>
+        <button id="reset" class="btn_style">Spela igen</button>
+    </div>
+  </section>
+  
+
+  <script src="./main.js" type="application/javascript"></script>
+</body>
+</html>

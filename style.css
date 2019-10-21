@@ -1,0 +1,281 @@
+@font-face {
+    font-family: 'zefani';
+    src: url(./Zefani_Uppercase_Demo-Regular.otf);
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+body {
+    background-image: linear-gradient(to right, #ee0979, #ff6a00);
+    width: 100%;
+    color: white;
+    font-family: 'Lato';
+}
+h1 {
+    font-family: 'zefani';
+    text-transform: uppercase;
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    
+}
+p {
+    font-family: Lato;
+}
+
+/************************************************************************/
+
+#welcome_screen {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.symbol {
+    font-size: 2em;
+    font-weight: 600;
+}
+.x_symbol {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.btn_style {
+    display: block;
+    color: white;
+    font-family: 'Lato';
+    font-size: 1rem;
+    padding: 10px;
+    text-transform: uppercase;
+    border: solid 1px white;
+    border-radius: 25px;
+    background: transparent;
+}
+#start_game {
+    width: 30%;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+  
+}
+.btn_style:hover {
+    cursor: pointer;
+}
+
+fieldset {
+    border-color: white;
+    margin-bottom: 15px;
+}
+fieldset > label{
+    margin-right: 10%;
+}
+label, select {
+    font-size: 1em;
+}
+
+.container {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+   
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border-radius: 50%;
+}
+label.symbol .checkmark {
+    top: 14px;
+}
+.container:hover input ~ .checkmark {
+    background-color: #e0e0e0;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none; 
+}
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+.container .checkmark:after {
+    top: 3.5px;
+    left: 3.5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fe6506;
+}
+
+/* select */
+
+select {
+    font-family: "Lato";
+    color: white;
+    padding: 5px;
+    background: transparent;
+    border-color: white;
+}
+option {
+    color:  #f63740;
+    background-color: white;
+}
+option:checked {
+    background-color: #f63740;
+    color: white;
+}
+
+
+/*****************************************************************************/
+#game_section {
+    max-width: 100vw;
+}
+
+#game_board {
+   width: 50%;
+   display: inline-block;
+   margin-left: 10%;
+}
+
+#game_stats {
+    width: 40%;
+    float: right;
+    font-size: 2.5vw;
+    padding-top: 20vh;
+}
+
+.row {
+    padding: 0;
+    display:flex;
+}
+#move_turn, #move_counter {
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#move_turn span {
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.square:disabled {
+    color: #f63740;
+}
+.square {
+    display: inline-block;
+    width: 1.5vw;
+    height: 1.5vw;
+    padding: 0;
+    background-color: white;
+    border-style: none;
+    margin: 1px;
+    font-size: 1.2vw;
+    font-weight: bold;
+    color: white;
+}
+
+
+.hide {
+    display: none;
+}
+
+
+/************************************************************************/
+
+#end_section {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+#end_section div {
+    width: 30%;
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 50%;
+    right: 50%;
+}
+#end_section p {
+    font-size: 8vw;
+    text-align: center;
+}
+#winner {
+    font-size: 9vw;
+    font-weight: bold;
+}
+#reset {
+    width: 100%;
+    font-size: 3vw;
+    border-radius: 50px;
+}
+
+
+
+/********************************************************************/
+
+@media screen and (max-width: 750px) {
+    #welcome_screen {
+        width: 95%;
+    }
+    #game_section {
+        position: relative;
+    }
+    #game_board {
+        width: 90vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        display: block;
+        position: absolute;
+        top: 100px;
+        padding-bottom: 50px;
+    }
+    #game_stats {
+        position: absolute;
+        top: 0;
+        width: 70%;
+        padding-top: 0;
+        margin-left: 20%;
+        margin-right: 10%;
+     
+    }
+    #move_turn, #move_counter {
+        width: 49%;
+        display: inline-block;
+       
+    }
+ 
+    .square {
+        width: 4vw;
+        height: 3.5vw;
+        font-size: 3vw;
+    }
+  
+}
