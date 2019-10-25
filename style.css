@@ -277,5 +277,22 @@ option:checked {
         height: 3.5vw;
         font-size: 3vw;
     }
+    fieldset > label{
+        margin-right: 5%;
+    }
   
 }
+
+/*************************************************************************/
+
+/*
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) { 
+
+    h1 {
+        color: black;
+    }
+}
+*/
