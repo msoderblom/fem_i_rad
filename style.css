@@ -1,3 +1,29 @@
+/* Phones */
+
+h1 {
+    margin-bottom: 5px;
+    font-family: 'zefani';
+    text-transform: uppercase;
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+}
+#welcome_screen {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+fieldset > label{
+    margin-right: 5%;
+}
+
+
+
+
+
+
 @font-face {
     font-family: 'zefani';
     src: url(./Zefani_Uppercase_Demo-Regular.otf);
@@ -8,7 +34,6 @@ html, body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden;
 }
 
 body {
@@ -17,26 +42,12 @@ body {
     color: white;
     font-family: 'Lato', sans-serif;
 }
-h1 {
-    font-family: 'zefani';
-    text-transform: uppercase;
-    font-size: 3rem;
-    width: 100%;
-    text-align: center;
-    
-}
+
 p {
     font-family: Lato;
 }
 
-/************************************************************************/
-
-#welcome_screen {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/***************************WELCOME SCREEN**********************************/
 .symbol {
     font-size: 2em;
     font-weight: 600;
@@ -45,7 +56,6 @@ p {
     font-size: 1.5em;
     font-weight: 500;
 }
-
 .btn_style {
     display: block;
     color: white;
@@ -72,13 +82,10 @@ fieldset {
     border-color: white;
     margin-bottom: 15px;
 }
-fieldset > label{
-    margin-right: 10%;
-}
+
 label, select {
     font-size: 1em;
 }
-
 .container {
     position: relative;
     padding-left: 25px;
@@ -147,62 +154,68 @@ option:checked {
 }
 
 
-/*****************************************************************************/
+/********************************GAME SECTION*******************************/
+
 #game_section {
-    max-width: 100vw;
+    position: relative;
 }
-
 #game_board {
-   width: 50%;
-   display: inline-block;
-   margin-left: 10%;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: block;
+    position: absolute;
+    top: 100px;
+    padding-bottom: 50px;
 }
-
 #game_stats {
-    width: 40%;
-    float: right;
-    font-size: 2.5vw;
-    padding-top: 20vh;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    padding-top: 0;
+    font-size: 5vw;
+    
+}
+#move_turn, #move_counter {
+    width: fit-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+#move_turn span {
+    font-size: 8vw;
+    font-weight: bold;
 }
 
+.square {
+    display: inline-block;
+    width: 4vw;
+    height: 3.5vw;
+    padding: 0;
+    margin: 1px;
+    background-color: white;
+    border-style: none;
+    font-weight: bold;
+    color: white;
+    font-size: 3vw;
+}
 .row {
     padding: 0;
     display:flex;
 }
-#move_turn, #move_counter {
-    width: 70%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-#move_turn span {
-    font-size: 4vw;
-    font-weight: bold;
-}
-
 .square:disabled {
     color: #f63740;
 }
-.square {
-    display: inline-block;
-    width: 1.5vw;
-    height: 1.5vw;
-    padding: 0;
-    background-color: white;
-    border-style: none;
-    margin: 1px;
-    font-size: 1.2vw;
-    font-weight: bold;
-    color: white;
-}
-
 
 .hide {
     display: none;
 }
 
 
-/************************************************************************/
+/******************************END SECTION********************************/
 
 #end_section {
     position: fixed;
@@ -239,60 +252,80 @@ option:checked {
 
 
 
-/********************************************************************/
+/***************************MEDIA QUERIES********************************/
 
-@media screen and (max-width: 750px) {
-    h1 {
-        margin-bottom: 5px;
-    }
-    #welcome_screen {
-        width: 95%;
-    }
-    #game_section {
-        position: relative;
-    }
+
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    
+    
     #game_board {
-        width: 90vw;
-        margin-left: 5vw;
-        margin-right: 5vw;
-        display: block;
-        position: absolute;
-        top: 100px;
-        padding-bottom: 50px;
+        top: 150px;
     }
     #game_stats {
-        position: absolute;
-        top: 0;
-        width: 100vw;
-        padding-top: 0;
-        font-size: 5vw;
-     
-    }
-    #move_turn, #move_counter {
-        width: fit-content;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 1.5;
-    }
-    #move_turn span {
-        font-size: 8vw;
-    }
- 
-    .square {
-        width: 4vw;
-        height: 3.5vw;
         font-size: 3vw;
     }
-    fieldset > label{
-        margin-right: 5%;
-    }
-  
 }
 
-/*************************************************************************/
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #game_board {
+        top: 150px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    h1 {
+        margin-bottom: 0;
+    }
+    #welcome_screen {
+        width: 50%;
+    }
+    fieldset > label {
+        margin-right: 10%;
+    }
+    #game_section {
+        max-width: 100vw;
+        position: static;
+        padding-bottom: 0;
+    }
+    #game_board {
+        width: 50%;
+        display: inline-block;
+        margin-left: 10%;
+     }
+    #game_stats {
+        position: static;
+        width: 40%;
+        float: right;
+        font-size: 2.5vw;
+        padding-top: 20vh;
+    }
+    #move_turn, #move_counter {
+        width: 70%;
+        text-align: left;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #move_turn span {
+        font-size: 4vw;
+    }
+    .square {
+        width: 1.5vw;
+        height: 1.5vw;
+        font-size: 1.2vw;
+    }
+    
+}
 
 /*
 @media only screen 
@@ -304,4 +337,4 @@ and (-webkit-device-pixel-ratio : 3) {
         color: black;
     }
 }
-*/
+/*
