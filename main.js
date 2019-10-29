@@ -67,8 +67,8 @@ function hasWonHorizontal(mySquare) {
     const row = parseInt(mySquare.dataset.row)
     let counter = 0
 
-    for (let x = col-4; x < col+4; x++) {    
-        if (typeof squares[x] !== 'undefined') {
+    for (let x = col-4; x <= col+4; x++) {    
+        if (typeof squares[x] !== 'undefined' && typeof squares[row][x] !== 'undefined') {
             if (squares[row][x].textContent === mySquare.textContent) {
                 counter++
                 
@@ -95,8 +95,8 @@ function hasWonVertical(mySquare) {
     const row = parseInt(mySquare.dataset.row)
     let counter = 0
 
-    for (let y = row-4; y < row+4; y++) {    
-        if (typeof squares[y] !== 'undefined') {
+    for (let y = row-4; y <= row+4; y++) {    
+        if (typeof squares[y] !== 'undefined' && typeof squares[y][col] !== 'undefined') {
             if (squares[y][col].textContent === mySquare.textContent) {
                 counter++
                 
